@@ -1,0 +1,362 @@
+WEBVTT
+
+1
+00:00:00.999 --> 00:00:04.659
+Hello everyone. Our work is Capturing Rich
+Details of Human
+
+2
+00:00:04.659 --> 00:00:08.959
+Eyes. We reconstruct personalized eye
+assets with detailed
+
+3
+00:00:09.239 --> 00:00:11.379
+geometry, appearance, and pupil-driven
+iris motion.
+
+4
+00:00:13.325 --> 00:00:16.425
+Recovering these details requires
+different kinds of evidence.
+
+5
+00:00:17.045 --> 00:00:20.045
+The sclera has visible vessels and a
+non-spherical shape. The
+
+6
+00:00:20.605 --> 00:00:23.905
+transparent cornea reflects light and
+refracts our view of the
+
+7
+00:00:23.905 --> 00:00:27.765
+iris. Beneath it, iris pigmentation and
+surface relief jointly
+
+8
+00:00:27.765 --> 00:00:31.325
+determine appearance. A single capture
+modality cannot readily
+
+9
+00:00:31.325 --> 00:00:32.385
+separate these effects.
+
+10
+00:00:34.587 --> 00:00:37.867
+We combine complementary optical
+measurements with staged
+
+11
+00:00:37.867 --> 00:00:42.047
+reconstruction. Each branch targets a
+different component. The
+
+12
+00:00:42.047 --> 00:00:45.687
+sclera establishes the exterior reference;
+the cornea supplies
+
+13
+00:00:45.687 --> 00:00:49.427
+the refractive interface. Together, they
+support recovery of the
+
+14
+00:00:49.427 --> 00:00:50.727
+iris beneath that interface.
+
+15
+00:00:52.357 --> 00:00:56.317
+A single gaze leaves much of the sclera
+unobserved. We therefore
+
+16
+00:00:56.317 --> 00:00:59.597
+combine multiple views and gaze directions
+to improve surface
+
+17
+00:00:59.597 --> 00:01:03.717
+coverage. Each gaze is reconstructed
+separately, aligned in a
+
+18
+00:01:03.717 --> 00:01:07.197
+common spherical reference, and merged.
+The result preserves
+
+19
+00:01:07.197 --> 00:01:10.157
+scleral shape and vessels, while providing
+a reference for the
+
+20
+00:01:10.157 --> 00:01:10.797
+other components.
+
+21
+00:01:12.369 --> 00:01:15.869
+The transparent cornea requires different
+geometric evidence.
+
+22
+00:01:16.409 --> 00:01:18.769
+Placido-ring reflections constrain surface
+orientation,
+
+23
+00:01:18.769 --> 00:01:22.749
+complemented by specular highlights. We
+combine these
+
+24
+00:01:22.749 --> 00:01:26.449
+measurements to recover the anterior
+corneal surface. Its
+
+25
+00:01:26.449 --> 00:01:29.609
+geometry determines how light bends
+between the camera, the
+
+26
+00:01:29.609 --> 00:01:31.109
+illumination, and the iris.
+
+27
+00:01:32.333 --> 00:01:36.593
+Refraction matters when recovering iris
+detail. We account for
+
+28
+00:01:36.593 --> 00:01:39.693
+it along viewing and illumination paths.
+Multi-light images
+
+29
+00:01:39.693 --> 00:01:43.813
+provide shading changes that constrain
+surface normals. These
+
+30
+00:01:43.813 --> 00:01:47.513
+normals guide geometric refinement,
+allowing us to recover iris
+
+31
+00:01:47.513 --> 00:01:48.993
+relief together with its texture.
+
+32
+00:01:50.561 --> 00:01:53.941
+The recovered components form a complete,
+renderable eye.
+
+33
+00:01:54.581 --> 00:01:57.741
+Keeping their geometry explicit allows us
+to model reflection
+
+34
+00:01:57.741 --> 00:02:01.061
+and refraction while retaining access to
+each surface for
+
+35
+00:02:01.061 --> 00:02:05.041
+analysis. We apply the same workflow
+across subjects, preserving
+
+36
+00:02:05.041 --> 00:02:09.101
+their individual shapes, vessel patterns,
+and iris textures. The
+
+37
+00:02:09.101 --> 00:02:12.541
+resulting assets share a common
+representation without replacing
+
+38
+00:02:12.541 --> 00:02:14.881
+those captured differences with a single
+eye shape.
+
+39
+00:02:16.483 --> 00:02:19.563
+We also characterize individual
+differences in geometry.
+
+40
+00:02:20.243 --> 00:02:23.403
+Pupil-center offset describes alignment;
+scleral topography
+
+41
+00:02:23.403 --> 00:02:27.703
+measures deviations from a sphere; corneal
+elevation describes
+
+42
+00:02:27.703 --> 00:02:31.463
+local shape. These properties support
+analysis of the recovered
+
+43
+00:02:31.463 --> 00:02:33.303
+eye structure alongside its appearance.
+
+44
+00:02:34.999 --> 00:02:38.159
+Across subjects, these measurements reveal
+differences in
+
+45
+00:02:38.159 --> 00:02:42.139
+surface shape and pupil-center offset. Our
+personalized assets
+
+46
+00:02:42.139 --> 00:02:45.419
+therefore retain geometric characteristics
+as well as the colors
+
+47
+00:02:45.419 --> 00:02:47.159
+and patterns captured in their textures.
+
+48
+00:02:48.937 --> 00:02:53.037
+A static iris cannot represent changes in
+pupil size. We
+
+49
+00:02:53.037 --> 00:02:56.457
+therefore model deformation across pupil
+states, keeping the
+
+50
+00:02:56.457 --> 00:02:59.377
+outer boundary fixed as the opening
+expands and contracts.
+
+51
+00:03:00.137 --> 00:03:03.217
+Texture follows the surface, preserving
+the captured pattern.
+
+52
+00:03:03.837 --> 00:03:07.317
+The deformation also changes the surface
+profile, allowing the
+
+53
+00:03:07.317 --> 00:03:10.397
+model to express both the pupil opening
+and the iris shape
+
+54
+00:03:10.397 --> 00:03:11.217
+throughout the motion.
+
+55
+00:03:13.641 --> 00:03:17.461
+This representation retains individual
+pigmentation, radial
+
+56
+00:03:17.461 --> 00:03:21.301
+patterns, and relief as the pupil changes.
+The cornea adds
+
+57
+00:03:21.301 --> 00:03:24.821
+reflection and refracts the iris beneath
+it. These examples
+
+58
+00:03:24.821 --> 00:03:28.021
+illustrate the resulting appearance. To
+evaluate reconstruction
+
+59
+00:03:28.021 --> 00:03:31.841
+quality, we need quantitative comparisons
+of surface accuracy
+
+60
+00:03:31.841 --> 00:03:34.761
+and image agreement, including the
+contribution of each
+
+61
+00:03:34.761 --> 00:03:35.561
+additional measurement.
+
+62
+00:03:37.819 --> 00:03:41.219
+These comparisons test whether corneal
+ring measurements and
+
+63
+00:03:41.219 --> 00:03:44.399
+iris photometric normals improve the
+recovered geometry.
+
+64
+00:03:46.011 --> 00:03:49.531
+Synthetic observations provide known
+reference geometry,
+
+65
+00:03:49.771 --> 00:03:52.271
+allowing us to measure reconstruction
+errors directly.
+
+66
+00:03:53.815 --> 00:03:57.415
+In this synthetic evaluation, combining
+ring and specular
+
+67
+00:03:57.415 --> 00:04:01.035
+constraints improves corneal
+reconstruction. For the iris,
+
+68
+00:04:01.255 --> 00:04:04.395
+photometric normals reduce the mean
+absolute error by half.
+
+69
+00:04:05.633 --> 00:04:08.893
+To assess appearance, we compare
+renderings with captured
+
+70
+00:04:08.893 --> 00:04:12.793
+images. Reserving gaze directions allows
+evaluation beyond
+
+71
+00:04:12.793 --> 00:04:16.513
+reconstruction inputs. We also examine the
+effects of iris
+
+72
+00:04:16.513 --> 00:04:18.713
+photometric normals and corneal
+refraction.
+
+73
+00:04:19.865 --> 00:04:23.505
+Across twenty eyes, geometric and image
+measurements provide
+
+74
+00:04:23.505 --> 00:04:26.285
+complementary assessments of the
+reconstructed assets.
