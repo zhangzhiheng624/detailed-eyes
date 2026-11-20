@@ -10,46 +10,41 @@
   <meta name="citation_author" content="Xia, Shihong">
   <meta name="citation_doi" content="10.1145/3842575">
   <title>Capturing Rich Details of Human Eyes</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
-  <header class="shell nav">
-    <a class="brand" href="./">DetailedEyes</a>
-    <nav aria-label="Project sections">
-      <a href="#method">Method</a>
-      <a href="#video">Video</a>
-      <a href="#dataset">Dataset</a>
-      <a href="#citation">Citation</a>
+  <header class="shell paper-header">
+    <h1>Capturing Rich Details of Human Eyes</h1>
+    <p class="venue">SIGGRAPH Asia 2026 · ACM Transactions on Graphics</p>
+    <ul class="authors" aria-label="Authors">
+      <li>Zhiheng Zhang<sup>*</sup></li>
+      <li>Shuang Yang<sup>*</sup></li>
+      <li>Shihong Xia<sup>†</sup></li>
+    </ul>
+    <p class="affiliation">Institute of Computing Technology, Chinese Academy of Sciences<br>University of Chinese Academy of Sciences</p>
+    <p class="author-notes"><span>* Equal contribution</span><span>† Corresponding author</span></p>
+    <nav class="actions" aria-label="Project resources">
+      <a class="button primary" href="https://doi.org/10.1145/3842575">Paper</a>
+      <a class="button" href="#video">Video</a>
+      <a class="button" href="#dataset">Dataset</a>
+      <a class="button" href="#citation">BibTeX</a>
     </nav>
   </header>
 
   <main>
-    <section class="shell hero" aria-labelledby="title">
-      <div>
-        <p class="kicker">SIGGRAPH Asia 2026 · ACM Transactions on Graphics</p>
-        <h1 id="title">Capturing Rich Details of Human Eyes</h1>
-        <p class="authors">Zhiheng Zhang, Shuang Yang, Shihong Xia</p>
-        <p class="affiliation">Institute of Computing Technology, Chinese Academy of Sciences<br>University of Chinese Academy of Sciences</p>
-        <div class="actions">
-          <a class="button primary" href="https://doi.org/10.1145/3842575">Read the paper</a>
-          <a class="button" href="#video">Watch the demo</a>
-        </div>
-      </div>
-      <figure class="hero-figure">
-        <img src="assets/eye-render.webp" width="554" height="550" alt="Reconstructed human eye rendered with visible scleral vessels and iris structure">
-        <figcaption>Re-rendering of a reconstructed human eye</figcaption>
-      </figure>
+    <figure class="shell teaser">
+      <a href="assets/teaser.webp" aria-label="Open the full-size reconstruction figure"><img src="assets/teaser.webp" width="2400" height="1134" alt="Captured eye, reconstructed and rendered eye, component geometry and appearance, novel gaze, scleral vessels, corneal reflections, and iris detail"></a>
+      <figcaption>Eye reconstruction from component-specific measurements. The results show re-rendering, component geometry and appearance, novel gaze, and close-up details of the sclera, cornea, and iris.</figcaption>
+    </figure>
+
+    <section class="shell section" id="abstract">
+      <h2>Abstract</h2>
+      <p>Reflection and refraction couple the appearance of the sclera, cornea, and iris in photographs, making fine eye geometry difficult to recover. We present an eye capture system that uses optical measurements tailored to each component. Multi-view, multi-gaze images constrain the scleral shape, specular reflections constrain the corneal surface, and the estimated cornea enables refraction-aware recovery of iris microgeometry.</p>
+      <p>Across subjects, the reconstructions reveal scleral asymmetry, non-axisymmetric corneal shape, iris relief, and pupil-center motion. The resulting assets support novel-gaze rendering and are available for research through the DetailedEyes@CAS dataset.</p>
     </section>
 
     <section class="shell section" id="method">
-      <div class="section-intro">
-        <h2>Capturing the eye, component by component</h2>
-        <p>Reflections and refraction couple the appearance of the sclera, cornea, and iris in photographs. We use optical measurements tailored to each component to constrain its reconstruction in stages.</p>
-      </div>
-      <figure class="teaser">
-        <a href="assets/teaser.webp" aria-label="Open the full-size reconstruction figure"><img src="assets/teaser.webp" width="2400" height="1134" loading="lazy" alt="Captured eye, reconstructed and rendered eye, component geometry and appearance, novel gaze, scleral vessels, corneal reflections, and iris detail"></a>
-        <figcaption>From captured appearance to component geometry, novel gaze, and close-up details.</figcaption>
-      </figure>
+      <h2>Method</h2>
       <div class="components">
         <div><h3>Sclera</h3><p>Multi-view, multi-gaze imaging recovers subject-specific scleral geometry and establishes an eye-centered coordinate frame.</p></div>
         <div><h3>Cornea</h3><p>Specular highlights and dense Placido-ring measurements estimate the anterior corneal surface.</p></div>
@@ -58,7 +53,7 @@
     </section>
 
     <section class="shell section" id="video">
-      <h2>Demonstration</h2>
+      <h2>Video</h2>
       <video controls playsinline preload="none" poster="assets/demo-poster.jpg" aria-label="Capturing Rich Details of Human Eyes project video">
         <source src="assets/demo.mp4" type='video/mp4; codecs="avc1.640028, mp4a.40.2"'>
         <source src="assets/demo.webm" type="video/webm">
@@ -68,23 +63,28 @@
     </section>
 
     <section class="shell section" id="dataset">
-      <div class="section-intro">
-        <h2>DetailedEyes@CAS</h2>
-        <p>The research dataset contains 20 reconstructed eyes from 10 participants, with component meshes, textures, and five model-generated iris states per eye. Access is by application.</p>
-      </div>
-      <figure class="teaser">
+      <h2>DetailedEyes@CAS Dataset</h2>
+      <p>The dataset contains 20 reconstructed eyes from 10 participants, with component meshes, textures, and five model-generated iris states per eye.</p>
+      <p>For dataset access, please contact Shihong Xia at <a href="mailto:xsh@ict.ac.cn">xsh@ict.ac.cn</a>.</p>
+      <figure>
         <a href="assets/dataset-overview.webp" aria-label="Open the full-size dataset overview"><img src="assets/dataset-overview.webp" width="2200" height="859" alt="Rendered left and right eyes of the ten participants in DetailedEyes@CAS" loading="lazy"></a>
         <figcaption>Left and right eye reconstructions from all 10 participants.</figcaption>
       </figure>
-      <p class="application">To apply, complete and sign the application and license PDF in English, then send the complete PDF to <a href="mailto:xsh@ict.ac.cn">xsh@ict.ac.cn</a>.</p>
-      <div class="actions">
-        <a class="button primary" href="https://github.com/HmmLab/hmmlab.github.io/blob/main/Media/DetailedEyes/DetailedEyes-License.pdf">Application and license (PDF)</a>
-      </div>
     </section>
 
     <section class="shell section citation" id="citation">
-      <h2>Citation</h2>
-      <p>Zhiheng Zhang, Shuang Yang, and Shihong Xia. 2026. Capturing Rich Details of Human Eyes. <cite>ACM Transactions on Graphics</cite> 45, 6, Article 203.</p>
+      <h2>BibTeX</h2>
+      <pre tabindex="0" aria-label="BibTeX entry"><code>@article{zhang2026capturing,
+  author = {Zhang, Zhiheng and Yang, Shuang and Xia, Shihong},
+  title = {Capturing Rich Details of Human Eyes},
+  journal = {ACM Transactions on Graphics},
+  year = {2026},
+  volume = {45},
+  number = {6},
+  articleno = {203},
+  doi = {10.1145/3842575},
+  url = {https://doi.org/10.1145/3842575}
+}</code></pre>
       <a class="button" href="assets/citation.bib" download>Download BibTeX</a>
     </section>
   </main>
