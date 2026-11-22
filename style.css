@@ -133,6 +133,24 @@ figcaption { margin-top: .65rem; color: var(--muted); font-size: .9rem; line-hei
 .results-grid .wide-result { grid-column: 1 / -1; }
 .results-grid .wide-result img { aspect-ratio: auto; }
 figcaption strong { color: var(--ink); }
+.metrics-table {
+  width: 100%;
+  margin-top: 1.15rem;
+  border-collapse: collapse;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.metrics-table caption { padding-bottom: .5rem; color: var(--muted); text-align: left; }
+.metrics-table th, .metrics-table td {
+  padding: .55rem clamp(.3rem, 1.5vw, .9rem);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.metrics-table thead { background: var(--surface); }
+.metrics-table th[scope="row"] { font-weight: 400; }
+.metrics-table tr > :nth-last-child(-n+2) { text-align: right; font-variant-numeric: tabular-nums; }
+.metrics-note { color: var(--muted); font-size: .9rem; }
+.section > .asset-rendering { max-width: 42rem; margin: 1.75rem auto 0; }
 video { aspect-ratio: 16 / 9; background: #10181d; border-radius: .3rem; }
 .citation pre {
   overflow-x: auto;
@@ -157,4 +175,11 @@ video { aspect-ratio: 16 / 9; background: #10181d; border-radius: .3rem; }
   .capture-layout, .method-stages, .method-detail, .results-grid { grid-template-columns: 1fr; }
   .results-grid img { aspect-ratio: auto; }
   .affiliation { font-size: .92rem; }
+}
+
+@media (max-width: 25rem) {
+  .metrics-table { table-layout: fixed; font-size: .8rem; }
+  .metrics-table th, .metrics-table td { overflow-wrap: anywhere; }
+  .metrics-table th:first-child { width: 25%; }
+  .metrics-table thead th:nth-last-child(-n+2) { width: 16%; }
 }

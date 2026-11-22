@@ -10,7 +10,7 @@
   <meta name="citation_author" content="Xia, Shihong">
   <meta name="citation_doi" content="10.1145/3842575">
   <title>Capturing Rich Details of Human Eyes</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header class="shell paper-header">
@@ -19,9 +19,9 @@
     <ul class="authors" aria-label="Authors">
       <li>Zhiheng Zhang<sup>*</sup></li>
       <li>Shuang Yang<sup>*</sup></li>
-      <li>Shihong Xia<sup>†</sup></li>
+      <li>Prof. Shihong Xia<sup>†</sup></li>
     </ul>
-    <p class="affiliation">Institute of Computing Technology, Chinese Academy of Sciences<br>University of Chinese Academy of Sciences</p>
+    <p class="affiliation">HmmLab@CAS<br>University of Chinese Academy of Sciences</p>
     <p class="author-notes"><span>* Equal contribution</span><span>† Corresponding author</span></p>
     <nav class="actions" aria-label="Project resources">
       <a class="button primary" href="https://doi.org/10.1145/3842575">Paper</a>
@@ -42,6 +42,8 @@
       <a href="#capture">Capture System</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
+      <a href="#synthetic-validation">Synthetic Validation</a>
+      <a href="#rerendering">Re-rendering</a>
     </nav>
 
     <section class="shell section" id="abstract">
@@ -107,6 +109,38 @@
       </div>
     </section>
 
+    <section class="shell section" id="synthetic-validation">
+      <h2>Synthetic Data Validation</h2>
+      <p>We render component-specific observations from the digital eye of Bérard et al. and compare the reconstructions with its reference geometry.</p>
+      <table class="metrics-table" aria-describedby="synthetic-metrics">
+        <caption>Synthetic reconstruction errors in millimeters</caption>
+        <thead>
+          <tr><th scope="col">Component</th><th scope="col">Reconstruction setting</th><th scope="col">MAE</th><th scope="col">RMSE</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cornea</td><th scope="row">Specular + Placido normals</th><td>0.162</td><td>0.251</td></tr>
+          <tr><td>Cornea</td><th scope="row">Specular only</th><td>0.257</td><td>0.647</td></tr>
+          <tr><td>Cornea</td><th scope="row">Placido normals only</th><td>3.560</td><td>3.610</td></tr>
+          <tr><td>Sclera</td><th scope="row">Full ground-truth mask</th><td>0.516</td><td>0.652</td></tr>
+          <tr><td>Iris</td><th scope="row">Coarse reconstruction</th><td>0.226</td><td>0.266</td></tr>
+          <tr><td>Iris</td><th scope="row">Coarse + photometric normals</th><td>0.113</td><td>0.155</td></tr>
+        </tbody>
+      </table>
+      <p id="synthetic-metrics" class="metrics-note">The error measures are curvature-radius residuals over the full cornea, radius-map errors on the scleral mask, and 3D nearest-neighbor distances on the iris. MAE is mean absolute error and RMSE is root mean square error.</p>
+    </section>
+
+    <section class="shell section" id="rerendering">
+      <h2>Qualitative Re-rendering</h2>
+      <figure class="paper-figure">
+        <a href="assets/held-out-gaze.webp"><img src="assets/held-out-gaze.webp" width="1920" height="1722" alt="Full-eye views and iris close-ups for two held-out gaze directions, comparing two ablations, the full model, and captured photographs" loading="lazy"></a>
+        <figcaption><strong>Comparison with held-out captures.</strong> For two gaze directions excluded from reconstruction, the columns show rendering without iris photometric normals, rendering without corneal refraction, the full model, and the corresponding photographs.</figcaption>
+      </figure>
+      <figure class="paper-figure asset-rendering">
+        <a href="assets/asset-rendering.webp"><img src="assets/asset-rendering.webp" width="1260" height="1316" alt="Three rows of reconstructed eye renderings showing changes in illumination, pupil size, and gaze direction" loading="lazy"></a>
+        <figcaption><strong>Rendering under varying conditions.</strong> Top to bottom, the rows show close-up relighting, changes in pupil size, and changes in gaze direction.</figcaption>
+      </figure>
+    </section>
+
     <section class="shell section" id="video">
       <h2>Video</h2>
       <video controls playsinline preload="none" poster="assets/demo-poster.jpg" aria-label="Capturing Rich Details of Human Eyes project video">
@@ -120,8 +154,9 @@
     <section class="shell section" id="dataset">
       <h2>DetailedEyes@CAS Dataset</h2>
       <p>The dataset contains 20 reconstructed eyes from 10 participants, with component meshes, textures, and five model-generated iris states per eye.</p>
-      <p>DetailedEyes@CAS was developed as part of research at the Institute of Computing Technology, Chinese Academy of Sciences. The research was supported by the Innovation Funding of the Institute of Computing Technology, Chinese Academy of Sciences (Grant No. E461020) and the National Key Research and Development Program of China (Grant No. 2022YFB3303202).</p>
-      <p>For dataset access, please contact Shihong Xia at <a href="mailto:xsh@ict.ac.cn">xsh@ict.ac.cn</a>.</p>
+      <p>DetailedEyes@CAS was developed as part of research at HmmLab@CAS. The research was supported by the Innovation Funding of the Institute of Computing Technology, Chinese Academy of Sciences (Grant No. E461020) and the National Key Research and Development Program of China (Grant No. 2022YFB3303202).</p>
+      <p>For dataset access, please contact Prof. Shihong Xia at <a href="mailto:xsh@ict.ac.cn">xsh@ict.ac.cn</a>.</p>
+      <p><a class="button" href="dataset/">Dataset release and access application</a></p>
       <figure>
         <a href="assets/dataset-overview.webp" aria-label="Open the full-size dataset overview"><img src="assets/dataset-overview.webp" width="2200" height="859" alt="Rendered left and right eyes of the ten participants in DetailedEyes@CAS" loading="lazy"></a>
         <figcaption>Left and right eye reconstructions from all 10 participants.</figcaption>
@@ -144,6 +179,6 @@
       <a class="button" href="assets/citation.bib" download>Download BibTeX</a>
     </section>
   </main>
-  <footer class="shell footer">Human Motion Modeling Lab · Institute of Computing Technology, CAS</footer>
+  <footer class="shell footer">HmmLab@CAS</footer>
 </body>
 </html>
